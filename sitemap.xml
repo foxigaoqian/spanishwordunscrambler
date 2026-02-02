@@ -7,19 +7,25 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://spanishwordunscrambler.com/spanish-anagram-solver</loc>
+    <loc>https://spanishwordunscrambler.com/about</loc>
     <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://spanishwordunscrambler.com/spanish-scrabble-helper</loc>
+    <loc>https://spanishwordunscrambler.com/privacy-policy</loc>
     <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://spanishwordunscrambler.com/es/</loc>
+    <loc>https://spanishwordunscrambler.com/terms-of-service</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+    <url>
+    <loc>https://spanishwordunscrambler.com/contact</loc>
     <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
