@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Spanish Word Unscrambler</title>
+    <meta name="description" content="Learn about Spanish Word Unscrambler, our mission to help Spanish learners and word game enthusiasts.">
+    <link rel="canonical" href="https://spanishwordunscrambler.com/about">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #D84315;
+            --primary-dark: #BF360C;
+            --secondary: #FFA726;
+            --accent: #FFE082;
+            --bg: #FFFBF5;
+            --surface: #FFFFFF;
+            --text: #1A1A1A;
+            --text-muted: #666666;
+            --border: #E0D5C7;
+            --success: #43A047;
+            --shadow: rgba(216, 67, 21, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 167, 38, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(216, 67, 21, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 40px 0 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--text);
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        
+        .page-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content-section {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            background: var(--surface);
+            padding: 48px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        p {
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        
+        ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--surface);
+            padding: 60px 0 40px;
+            margin-top: 100px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h4 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.125rem;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        
+        .footer-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav a {
+                margin: 0 12px 8px;
+            }
+            
+            .content-section {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">Spanish Word Unscrambler</a>
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="/about">About</a>
+                    <a href="/contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>About Us</h1>
+                <p class="page-subtitle">Helping Spanish learners and word game enthusiasts since 2024</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Our Mission</h2>
+                <p>Spanish Word Unscrambler was created with a simple mission: to provide a fast, free, and reliable tool for anyone working with Spanish words. Whether you're a student learning Spanish, a teacher creating exercises, or a word game enthusiast, our tool helps you find the words you need instantly.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>What We Offer</h2>
+                <p>Our Spanish word unscrambler provides:</p>
+                <ul>
+                    <li><strong>Instant Results:</strong> Get all possible Spanish words from your letters in milliseconds</li>
+                    <li><strong>Full Spanish Support:</strong> Complete support for ñ and accented vowels (á, é, í, ó, ú)</li>
+                    <li><strong>No Registration Required:</strong> Use our tool freely without creating an account</li>
+                    <li><strong>Mobile Friendly:</strong> Works perfectly on phones, tablets, and computers</li>
+                    <li><strong>Privacy Focused:</strong> We don't track, store, or sell your data</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Who We Serve</h2>
+                <p>Our tool is designed for:</p>
+                <ul>
+                    <li><strong>Spanish Language Students:</strong> Discover new vocabulary and practice spelling</li>
+                    <li><strong>Teachers and Educators:</strong> Create engaging word puzzles and exercises</li>
+                    <li><strong>Scrabble Players:</strong> Find valid words for Spanish Scrabble games</li>
+                    <li><strong>Crossword Enthusiasts:</strong> Solve Spanish crossword puzzles faster</li>
+                    <li><strong>Writers and Translators:</strong> Explore word possibilities and variations</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Our Technology</h2>
+                <p>Spanish Word Unscrambler is built using modern web technologies to ensure fast performance and reliability. Our dictionary contains thousands of common Spanish words, optimized for the 4-10 letter range that represents the majority of everyday Spanish vocabulary.</p>
+                <p>The tool runs entirely in your browser, which means:</p>
+                <ul>
+                    <li>Lightning-fast results with no server delays</li>
+                    <li>Your searches are completely private</li>
+                    <li>Works offline once the page is loaded</li>
+                    <li>No data is transmitted or stored on our servers</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Our Commitment</h2>
+                <p>We are committed to keeping Spanish Word Unscrambler free, fast, and accessible to everyone. We believe that language learning tools should be available to all, without paywalls or annoying advertisements interfering with your experience.</p>
+                <p>We continuously work to improve our dictionary and add new features based on user feedback. If you have suggestions or encounter any issues, please don't hesitate to contact us.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Contact Us</h2>
+                <p>Have questions, suggestions, or feedback? We'd love to hear from you! Visit our <a href="/contact" style="color: var(--primary); text-decoration: underline;">Contact page</a> to get in touch.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Spanish Word Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Spanish Word Unscrambler</a></li>
+                        <li><a href="/spanish-anagram-solver">Spanish Anagram Solver</a></li>
+                        <li><a href="/spanish-scrabble-helper">Spanish Scrabble Helper</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="/how-to-use">How to Use</a></li>
+                        <li><a href="/spanish-letters-guide">Spanish Letters Guide</a></li>
+                        <li><a href="/word-game-tips">Word Game Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SpanishWordUnscrambler.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Spanish Word Unscrambler</title>
+    <meta name="description" content="Terms of Service for Spanish Word Unscrambler. Read our terms and conditions for using our service.">
+    <link rel="canonical" href="https://spanishwordunscrambler.com/terms-of-service">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #D84315;
+            --primary-dark: #BF360C;
+            --secondary: #FFA726;
+            --accent: #FFE082;
+            --bg: #FFFBF5;
+            --surface: #FFFFFF;
+            --text: #1A1A1A;
+            --text-muted: #666666;
+            --border: #E0D5C7;
+            --success: #43A047;
+            --shadow: rgba(216, 67, 21, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 167, 38, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(216, 67, 21, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 40px 0 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        main {
+            padding: 60px 0;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--text);
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        
+        .last-updated {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        
+        .content-section {
+            max-width: 800px;
+            margin: 0 auto 32px;
+            background: var(--surface);
+            padding: 48px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+            margin: 24px 0 12px;
+            color: var(--text);
+        }
+        
+        p {
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        
+        ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        footer {
+            background: var(--surface);
+            padding: 60px 0 40px;
+            margin-top: 100px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h4 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.125rem;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        
+        .footer-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav a {
+                margin: 0 12px 8px;
+            }
+            
+            .content-section {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">Spanish Word Unscrambler</a>
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="/about">About</a>
+                    <a href="/contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>Terms of Service</h1>
+                <p class="last-updated">Last Updated: February 2, 2026</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Agreement to Terms</h2>
+                <p>By accessing and using Spanish Word Unscrambler ("the Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use the Service.</p>
+                <p>We reserve the right to modify these Terms at any time. Your continued use of the Service following any changes constitutes acceptance of those changes.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Description of Service</h2>
+                <p>Spanish Word Unscrambler is a free online tool that helps users find Spanish words from scrambled letters. The Service:</p>
+                <ul>
+                    <li>Provides instant word unscrambling for Spanish language</li>
+                    <li>Supports special Spanish characters (ñ, á, é, í, ó, ú)</li>
+                    <li>Requires no registration or login</li>
+                    <li>Is accessible via web browsers on various devices</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Acceptable Use</h2>
+                <p>You agree to use the Service only for lawful purposes and in accordance with these Terms. You agree NOT to:</p>
+                <ul>
+                    <li>Use the Service in any way that violates applicable laws or regulations</li>
+                    <li>Attempt to interfere with, compromise, or disrupt the Service or servers</li>
+                    <li>Use automated systems (bots, scrapers) to access the Service without permission</li>
+                    <li>Attempt to reverse engineer or extract the source code of the Service</li>
+                    <li>Use the Service to transmit malicious code, viruses, or harmful content</li>
+                    <li>Impersonate another person or entity</li>
+                    <li>Engage in any activity that could damage, disable, or impair the Service</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Intellectual Property Rights</h2>
+                
+                <h3>Our Content</h3>
+                <p>The Service, including its original content, features, and functionality, is owned by Spanish Word Unscrambler and is protected by international copyright, trademark, and other intellectual property laws.</p>
+                
+                <h3>Your Use</h3>
+                <p>We grant you a limited, non-exclusive, non-transferable license to access and use the Service for personal, non-commercial purposes. This license does not include:</p>
+                <ul>
+                    <li>The right to modify or copy the Service</li>
+                    <li>The right to use the Service for commercial purposes</li>
+                    <li>The right to download or extract our word database</li>
+                    <li>The right to remove any copyright or proprietary notices</li>
+                </ul>
+                
+                <h3>Third-Party Content</h3>
+                <p>The Spanish word dictionary used by our Service is compiled from various public domain and licensed sources. We respect the intellectual property rights of others and expect our users to do the same.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Disclaimer of Warranties</h2>
+                <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:</p>
+                <ul>
+                    <li>Warranties of merchantability or fitness for a particular purpose</li>
+                    <li>Warranties that the Service will be uninterrupted or error-free</li>
+                    <li>Warranties regarding the accuracy or completeness of word results</li>
+                    <li>Warranties that the Service will meet your requirements</li>
+                </ul>
+                <p>We do not guarantee that our word database is complete, accurate, or up-to-date. Words and their validity may vary based on different Spanish dictionaries and regional variations.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Limitation of Liability</h2>
+                <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, SPANISH WORD UNSCRAMBLER SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF THE SERVICE, INCLUDING BUT NOT LIMITED TO:</p>
+                <ul>
+                    <li>Loss of profits, data, or use</li>
+                    <li>Business interruption</li>
+                    <li>Personal injury or property damage</li>
+                    <li>Reliance on information obtained through the Service</li>
+                </ul>
+                <p>Our total liability to you for all claims arising from or related to the Service shall not exceed the amount you paid to use the Service (which is $0 for free users).</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Indemnification</h2>
+                <p>You agree to indemnify, defend, and hold harmless Spanish Word Unscrambler, its affiliates, and their respective officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses arising out of or related to:</p>
+                <ul>
+                    <li>Your use of the Service</li>
+                    <li>Your violation of these Terms</li>
+                    <li>Your violation of any rights of another person or entity</li>
+                    <li>Your violation of any applicable laws or regulations</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Educational and Recreational Use</h2>
+                <p>Our Service is intended for educational and recreational purposes, including:</p>
+                <ul>
+                    <li>Language learning and vocabulary building</li>
+                    <li>Playing word games (Scrabble, crosswords, etc.)</li>
+                    <li>Educational exercises and assignments</li>
+                    <li>Personal entertainment</li>
+                </ul>
+                <p>While we strive for accuracy, we cannot guarantee that all word results are valid in all contexts or game variations. Always verify important information with authoritative sources.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Third-Party Links</h2>
+                <p>The Service may contain links to third-party websites or services. We are not responsible for:</p>
+                <ul>
+                    <li>The content, privacy policies, or practices of third-party sites</li>
+                    <li>Any damages or losses caused by your use of third-party sites</li>
+                    <li>The availability or accuracy of third-party sites</li>
+                </ul>
+                <p>Your use of third-party sites is at your own risk and subject to their terms and conditions.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Termination</h2>
+                <p>We reserve the right to terminate or suspend your access to the Service immediately, without prior notice or liability, for any reason, including but not limited to:</p>
+                <ul>
+                    <li>Violation of these Terms</li>
+                    <li>Fraudulent or illegal activity</li>
+                    <li>Requests by law enforcement or government agencies</li>
+                    <li>Discontinuation or material modification of the Service</li>
+                </ul>
+                <p>Upon termination, your right to use the Service will immediately cease.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Governing Law and Jurisdiction</h2>
+                <p>These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to its conflict of law provisions.</p>
+                <p>Any legal action or proceeding arising out of or related to these Terms or the Service shall be brought exclusively in the courts located in the United States, and you consent to the personal jurisdiction of such courts.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Severability</h2>
+                <p>If any provision of these Terms is held to be invalid or unenforceable, the remaining provisions will continue in full force and effect. The invalid or unenforceable provision will be replaced with a valid provision that most closely matches the intent of the original provision.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Entire Agreement</h2>
+                <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and Spanish Word Unscrambler regarding the use of the Service and supersede all prior agreements and understandings.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Contact Information</h2>
+                <p>If you have any questions about these Terms of Service, please contact us:</p>
+                <ul>
+                    <li><strong>Website:</strong> <a href="/contact" style="color: var(--primary);">spanishwordunscrambler.com/contact</a></li>
+                    <li><strong>Email:</strong> legal@spanishwordunscrambler.com</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Acknowledgment</h2>
+                <p>By using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Spanish Word Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Spanish Word Unscrambler</a></li>
+                        <li><a href="/spanish-anagram-solver">Spanish Anagram Solver</a></li>
+                        <li><a href="/spanish-scrabble-helper">Spanish Scrabble Helper</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="/how-to-use">How to Use</a></li>
+                        <li><a href="/spanish-letters-guide">Spanish Letters Guide</a></li>
+                        <li><a href="/word-game-tips">Word Game Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SpanishWordUnscrambler.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

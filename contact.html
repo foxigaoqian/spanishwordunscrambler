@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Spanish Word Unscrambler</title>
+    <meta name="description" content="Contact Spanish Word Unscrambler. Get in touch with questions, feedback, or suggestions.">
+    <link rel="canonical" href="https://spanishwordunscrambler.com/contact">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #D84315;
+            --primary-dark: #BF360C;
+            --secondary: #FFA726;
+            --accent: #FFE082;
+            --bg: #FFFBF5;
+            --surface: #FFFFFF;
+            --text: #1A1A1A;
+            --text-muted: #666666;
+            --border: #E0D5C7;
+            --success: #43A047;
+            --shadow: rgba(216, 67, 21, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 167, 38, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(216, 67, 21, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 40px 0 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        main {
+            padding: 60px 0;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--text);
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        
+        .page-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+        
+        .contact-card {
+            background: var(--surface);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px var(--shadow);
+        }
+        
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .contact-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        
+        .contact-card p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        
+        .contact-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        
+        .contact-link:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface);
+            padding: 48px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        .faq-section h2 {
+            font-size: 2rem;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        
+        .faq-item {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        
+        .faq-answer {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        
+        footer {
+            background: var(--surface);
+            padding: 60px 0 40px;
+            margin-top: 100px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h4 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.125rem;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        
+        .footer-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav a {
+                margin: 0 12px 8px;
+            }
+            
+            .contact-card,
+            .faq-section {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">Spanish Word Unscrambler</a>
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="/about">About</a>
+                    <a href="/contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>Contact Us</h1>
+                <p class="page-subtitle">Have questions or feedback? We'd love to hear from you!</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <span class="contact-icon">📧</span>
+                    <h2>Email Us</h2>
+                    <p>Send us an email and we'll get back to you as soon as possible.</p>
+                    <a href="mailto:contact@spanishwordunscrambler.com" class="contact-link">contact@spanishwordunscrambler.com</a>
+                </div>
+
+                <div class="contact-card">
+                    <span class="contact-icon">💬</span>
+                    <h2>Feedback</h2>
+                    <p>Share your thoughts, suggestions, or report issues with our tool.</p>
+                    <a href="mailto:feedback@spanishwordunscrambler.com" class="contact-link">feedback@spanishwordunscrambler.com</a>
+                </div>
+
+                <div class="contact-card">
+                    <span class="contact-icon">🔒</span>
+                    <h2>Privacy</h2>
+                    <p>Questions about privacy or data? We're here to help.</p>
+                    <a href="mailto:privacy@spanishwordunscrambler.com" class="contact-link">privacy@spanishwordunscrambler.com</a>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <h2>Common Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What is the best way to contact you?</div>
+                    <div class="faq-answer">Email is the best way to reach us. We typically respond within 24-48 hours during business days.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can you add more words to the dictionary?</div>
+                    <div class="faq-answer">We're always working to improve our word database. If you notice missing common Spanish words, please email us with specific examples and we'll review them for inclusion.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">I found a bug. How do I report it?</div>
+                    <div class="faq-answer">Please email us at feedback@spanishwordunscrambler.com with details about the issue, including what browser you're using and what happened. Screenshots are helpful if possible.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer an API or bulk access?</div>
+                    <div class="faq-answer">Currently, we don't offer an API or bulk access to our service. The tool is designed for individual use through the web interface. For commercial or bulk usage inquiries, please contact us directly.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I suggest new features?</div>
+                    <div class="faq-answer">Absolutely! We welcome feature suggestions. Email us at feedback@spanishwordunscrambler.com with your ideas. We review all suggestions and implement the most requested features when possible.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How can I support your project?</div>
+                    <div class="faq-answer">The best way to support us is to share Spanish Word Unscrambler with others who might find it useful. Word of mouth and social media shares help us reach more Spanish learners and word game enthusiasts.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer a Spanish version of this website?</div>
+                    <div class="faq-answer">We're working on a Spanish language version of the site. If you'd like to be notified when it's available, please email us and we'll add you to our notification list.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What information do you collect when I contact you?</div>
+                    <div class="faq-answer">When you email us, we only see the information you choose to include in your message (such as your email address and message content). We use this information solely to respond to your inquiry and don't share it with third parties. See our <a href="/privacy-policy" style="color: var(--primary);">Privacy Policy</a> for more details.</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Spanish Word Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Spanish Word Unscrambler</a></li>
+                        <li><a href="/spanish-anagram-solver">Spanish Anagram Solver</a></li>
+                        <li><a href="/spanish-scrabble-helper">Spanish Scrabble Helper</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="/how-to-use">How to Use</a></li>
+                        <li><a href="/spanish-letters-guide">Spanish Letters Guide</a></li>
+                        <li><a href="/word-game-tips">Word Game Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SpanishWordUnscrambler.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

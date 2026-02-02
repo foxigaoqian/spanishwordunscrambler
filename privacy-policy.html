@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Spanish Word Unscrambler</title>
+    <meta name="description" content="Privacy Policy for Spanish Word Unscrambler. Learn how we protect your privacy and handle your data.">
+    <link rel="canonical" href="https://spanishwordunscrambler.com/privacy-policy">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #D84315;
+            --primary-dark: #BF360C;
+            --secondary: #FFA726;
+            --accent: #FFE082;
+            --bg: #FFFBF5;
+            --surface: #FFFFFF;
+            --text: #1A1A1A;
+            --text-muted: #666666;
+            --border: #E0D5C7;
+            --success: #43A047;
+            --shadow: rgba(216, 67, 21, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 167, 38, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(216, 67, 21, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 40px 0 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        main {
+            padding: 60px 0;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--text);
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        
+        .last-updated {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        
+        .content-section {
+            max-width: 800px;
+            margin: 0 auto 32px;
+            background: var(--surface);
+            padding: 48px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+            margin: 24px 0 12px;
+            color: var(--text);
+        }
+        
+        p {
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        
+        ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        footer {
+            background: var(--surface);
+            padding: 60px 0 40px;
+            margin-top: 100px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h4 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.125rem;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        
+        .footer-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav a {
+                margin: 0 12px 8px;
+            }
+            
+            .content-section {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">Spanish Word Unscrambler</a>
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="/about">About</a>
+                    <a href="/contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>Privacy Policy</h1>
+                <p class="last-updated">Last Updated: February 2, 2026</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Introduction</h2>
+                <p>At Spanish Word Unscrambler ("we," "our," or "us"), we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your information when you use our website at spanishwordunscrambler.com (the "Service").</p>
+                <p>By using our Service, you agree to the terms of this Privacy Policy. If you do not agree with this policy, please do not use our Service.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Information We Collect</h2>
+                
+                <h3>Information You Provide</h3>
+                <p>Our Service is designed to work without requiring any personal information from you. When you use the Spanish Word Unscrambler tool:</p>
+                <ul>
+                    <li>The letters you enter are processed entirely in your browser</li>
+                    <li>We do not collect, store, or transmit the words or letters you search for</li>
+                    <li>No account creation or registration is required</li>
+                    <li>No personal information is requested or collected</li>
+                </ul>
+
+                <h3>Automatically Collected Information</h3>
+                <p>Like most websites, we may automatically collect certain technical information when you visit our Service:</p>
+                <ul>
+                    <li><strong>Log Data:</strong> Your IP address, browser type, operating system, and the pages you visit</li>
+                    <li><strong>Usage Data:</strong> Information about how you interact with our Service</li>
+                    <li><strong>Cookies:</strong> Small data files stored on your device (see "Cookies" section below)</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>How We Use Your Information</h2>
+                <p>We use automatically collected information solely for the following purposes:</p>
+                <ul>
+                    <li><strong>Service Operation:</strong> To provide and maintain our Service</li>
+                    <li><strong>Improvement:</strong> To understand how users interact with our Service and improve functionality</li>
+                    <li><strong>Analytics:</strong> To analyze usage patterns and trends</li>
+                    <li><strong>Security:</strong> To detect and prevent abuse or technical issues</li>
+                </ul>
+                <p><strong>We do not:</strong></p>
+                <ul>
+                    <li>Sell your information to third parties</li>
+                    <li>Use your information for marketing or advertising</li>
+                    <li>Share your information except as described in this policy</li>
+                    <li>Store the specific words or letters you search for</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Cookies and Tracking Technologies</h2>
+                <p>We may use cookies and similar tracking technologies to enhance your experience. Cookies are small text files stored on your device that help us:</p>
+                <ul>
+                    <li>Remember your preferences</li>
+                    <li>Understand how you use our Service</li>
+                    <li>Improve Service performance</li>
+                </ul>
+                
+                <h3>Types of Cookies We Use</h3>
+                <ul>
+                    <li><strong>Essential Cookies:</strong> Required for the Service to function properly</li>
+                    <li><strong>Analytics Cookies:</strong> Help us understand how visitors use our Service</li>
+                    <li><strong>Preference Cookies:</strong> Remember your settings and preferences</li>
+                </ul>
+                
+                <p>You can control cookies through your browser settings. Note that disabling cookies may affect the functionality of our Service.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Third-Party Services</h2>
+                <p>We may use third-party services to help operate our Service:</p>
+                
+                <h3>Analytics Services</h3>
+                <p>We may use services like Google Analytics to understand how our Service is used. These services may collect information about your visits and interactions. They have their own privacy policies governing their use of information.</p>
+                
+                <h3>Hosting Services</h3>
+                <p>Our Service is hosted on third-party servers that may have access to technical information necessary to provide hosting services.</p>
+                
+                <p>These third parties are prohibited from using your information for purposes other than providing services to us.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Data Security</h2>
+                <p>We implement reasonable security measures to protect information collected through our Service:</p>
+                <ul>
+                    <li>Secure HTTPS encryption for all data transmission</li>
+                    <li>Regular security updates and monitoring</li>
+                    <li>Limited access to any collected data</li>
+                </ul>
+                <p>However, no method of transmission over the Internet is 100% secure. While we strive to protect your information, we cannot guarantee absolute security.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Children's Privacy</h2>
+                <p>Our Service is available to users of all ages. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us so we can delete such information.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Your Privacy Rights</h2>
+                <p>Depending on your location, you may have certain rights regarding your information:</p>
+                <ul>
+                    <li><strong>Access:</strong> Request access to information we may have about you</li>
+                    <li><strong>Correction:</strong> Request correction of inaccurate information</li>
+                    <li><strong>Deletion:</strong> Request deletion of your information</li>
+                    <li><strong>Opt-Out:</strong> Opt out of certain data collection (e.g., analytics cookies)</li>
+                </ul>
+                <p>To exercise these rights, please contact us using the information provided below.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>International Users</h2>
+                <p>Our Service is operated in the United States. If you are accessing our Service from outside the United States, please be aware that your information may be transferred to, stored, and processed in the United States where our servers are located.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy from time to time. When we make changes, we will update the "Last Updated" date at the top of this page. We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information.</p>
+                <p>Continued use of our Service after changes constitutes acceptance of the updated Privacy Policy.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Contact Us</h2>
+                <p>If you have questions or concerns about this Privacy Policy or our privacy practices, please contact us:</p>
+                <ul>
+                    <li><strong>Website:</strong> <a href="/contact" style="color: var(--primary);">spanishwordunscrambler.com/contact</a></li>
+                    <li><strong>Email:</strong> privacy@spanishwordunscrambler.com</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Spanish Word Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Spanish Word Unscrambler</a></li>
+                        <li><a href="/spanish-anagram-solver">Spanish Anagram Solver</a></li>
+                        <li><a href="/spanish-scrabble-helper">Spanish Scrabble Helper</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="/how-to-use">How to Use</a></li>
+                        <li><a href="/spanish-letters-guide">Spanish Letters Guide</a></li>
+                        <li><a href="/word-game-tips">Word Game Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SpanishWordUnscrambler.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
