@@ -1,0 +1,21 @@
+{
+  "name": "Spanish Word Unscrambler",
+  "short_name": "SWU",
+  "description": "Unscramble Spanish words instantly",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFBF5",
+  "theme_color": "#D84315",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
