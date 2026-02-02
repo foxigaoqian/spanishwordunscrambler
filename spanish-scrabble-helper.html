@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanish Scrabble Helper – Win Spanish Scrabble Games</title>
+    <meta name="description" content="Free Spanish Scrabble helper and word finder. Find high-scoring Spanish words for Scrabble. Supports ñ and accented letters.">
+    <link rel="canonical" href="https://spanishwordunscrambler.com/spanish-scrabble-helper">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #D84315;
+            --primary-dark: #BF360C;
+            --secondary: #FFA726;
+            --accent: #FFE082;
+            --bg: #FFFBF5;
+            --surface: #FFFFFF;
+            --text: #1A1A1A;
+            --text-muted: #666666;
+            --border: #E0D5C7;
+            --success: #43A047;
+            --shadow: rgba(216, 67, 21, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 167, 38, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(216, 67, 21, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 40px 0 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        main {
+            padding: 60px 0;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 40px 0 60px;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--text);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content-section {
+            margin-bottom: 60px;
+        }
+        
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 24px;
+            color: var(--text);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin: 32px 0 16px;
+            color: var(--text);
+        }
+        
+        p {
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        
+        ul {
+            margin: 16px 0 16px 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .info-box {
+            background: var(--surface);
+            padding: 32px;
+            border-radius: 16px;
+            border-left: 4px solid var(--primary);
+            margin: 32px 0;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        .letter-values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 12px;
+            margin: 24px 0;
+        }
+        
+        .letter-card {
+            background: var(--surface);
+            padding: 16px;
+            border-radius: 8px;
+            border: 2px solid var(--border);
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        
+        .letter-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .letter {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .value {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+        
+        .strategy-card {
+            background: var(--surface);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        .strategy-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            margin-right: 16px;
+            font-size: 1.25rem;
+        }
+        
+        .strategy-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+        
+        .high-value-words {
+            background: var(--surface);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin: 32px 0;
+        }
+        
+        .word-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+        
+        .word-item {
+            background: var(--bg);
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .word-text {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        
+        .word-meaning {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+        
+        footer {
+            background: var(--surface);
+            padding: 60px 0 40px;
+            margin-top: 100px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h4 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.125rem;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        
+        .footer-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav a {
+                margin: 0 12px 8px;
+            }
+            
+            .letter-values-grid {
+                grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">Spanish Word Unscrambler</a>
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="/about">About</a>
+                    <a href="/contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Spanish Scrabble Helper</h1>
+                <p class="hero-subtitle">Master Spanish Scrabble with our complete guide to letter values, strategies, and high-scoring words.</p>
+            </div>
+        </section>
+
+        <section class="container content-section">
+            <h2>Spanish Scrabble Letter Values</h2>
+            <p>In Spanish Scrabble (also known as Scrabble en Español), each letter has a specific point value. Knowing these values is essential for maximizing your score.</p>
+            
+            <div class="letter-values-grid">
+                <div class="letter-card"><span class="letter">A</span><span class="value">1 pt</span></div>
+                <div class="letter-card"><span class="letter">B</span><span class="value">3 pts</span></div>
+                <div class="letter-card"><span class="letter">C</span><span class="value">2 pts</span></div>
+                <div class="letter-card"><span class="letter">D</span><span class="value">2 pts</span></div>
+                <div class="letter-card"><span class="letter">E</span><span class="value">1 pt</span></div>
+                <div class="letter-card"><span class="letter">F</span><span class="value">4 pts</span></div>
+                <div class="letter-card"><span class="letter">G</span><span class="value">2 pts</span></div>
+                <div class="letter-card"><span class="letter">H</span><span class="value">4 pts</span></div>
+                <div class="letter-card"><span class="letter">I</span><span class="value">1 pt</span></div>
+                <div class="letter-card"><span class="letter">J</span><span class="value">8 pts</span></div>
+                <div class="letter-card"><span class="letter">L</span><span class="value">1 pt</span></div>
+                <div class="letter-card"><span class="letter">LL</span><span class="value">8 pts</span></div>
+                <div class="letter-card"><span class="letter">M</span><span class="value">3 pts</span></div>
+                <div class="letter-card"><span class="letter">N</span><span class="value">1 pt</span></div>
+                <div class="letter-card"><span class="letter">Ñ</span><span class="value">8 pts</span></div>
+                <div class="letter-card"><span class="letter">O</span><span class="value">1 pt</span></div>
+                <div class="letter-card"><span class="letter">P</span><span class="value">3 pts</span></div>
+                <div class="letter-card"><span class="letter">Q</span><span class="value">5 pts</span></div>
+                <div class="letter-card"><span class="letter">R</span><span class="value">1 pt</span></div>
+                <div class="letter-card"><span class="letter">RR</span><span class="value">8 pts</span></div>
+                <div class="letter-card"><span class="letter">S</span><span class="value">1 pt</span></div>
+                <div class="letter-card"><span class="letter">T</span><span class="value">1 pt</span></div>
+                <div class="letter-card"><span class="letter">U</span><span class="value">1 pt</span></div>
+                <div class="letter-card"><span class="letter">V</span><span class="value">4 pts</span></div>
+                <div class="letter-card"><span class="letter">X</span><span class="value">8 pts</span></div>
+                <div class="letter-card"><span class="letter">Y</span><span class="value">4 pts</span></div>
+                <div class="letter-card"><span class="letter">Z</span><span class="value">10 pts</span></div>
+                <div class="letter-card"><span class="letter">CH</span><span class="value">5 pts</span></div>
+            </div>
+            
+            <div class="info-box">
+                <strong>Note:</strong> Spanish Scrabble includes special tiles for LL, RR, CH, and Ñ, which are considered single letters in Spanish. These high-value tiles can significantly boost your score when used strategically.
+            </div>
+        </section>
+
+        <section class="container content-section">
+            <h2>Top Strategies for Spanish Scrabble</h2>
+            
+            <div class="strategy-card">
+                <span class="strategy-number">1</span>
+                <div class="strategy-title">Master High-Value Letters</div>
+                <p>Focus on learning words with high-value letters like Z (10 pts), J (8 pts), X (8 pts), Ñ (8 pts), LL (8 pts), and RR (8 pts). Even short words with these letters can score big points.</p>
+            </div>
+            
+            <div class="strategy-card">
+                <span class="strategy-number">2</span>
+                <div class="strategy-title">Use Bonus Squares Wisely</div>
+                <p>Triple Word Score (TWS) squares are your best friend. A 7-letter word on a TWS can score over 100 points. Always calculate your score before placing tiles to maximize bonuses.</p>
+            </div>
+            
+            <div class="strategy-card">
+                <span class="strategy-number">3</span>
+                <div class="strategy-title">Learn Common Spanish Prefixes and Suffixes</div>
+                <p>Knowing common Spanish word patterns helps you build longer words. Common prefixes include "des-", "re-", "in-", "pre-". Common suffixes include "-ción", "-mente", "-dad", "-eza".</p>
+            </div>
+            
+            <div class="strategy-card">
+                <span class="strategy-number">4</span>
+                <div class="strategy-title">Keep Vowel-Consonant Balance</div>
+                <p>Spanish has many vowels, so don't hold onto too many consonants. Aim for a balanced rack with 3-4 vowels and 3-4 consonants for maximum flexibility.</p>
+            </div>
+            
+            <div class="strategy-card">
+                <span class="strategy-number">5</span>
+                <div class="strategy-title">Play Parallel Words</div>
+                <p>Create multiple words in one turn by playing parallel to existing words. This strategy can double or triple your score by forming several new words simultaneously.</p>
+            </div>
+            
+            <div class="strategy-card">
+                <span class="strategy-number">6</span>
+                <div class="strategy-title">Save Your S Tiles</div>
+                <p>The letter S is incredibly valuable in Spanish Scrabble for pluralizing nouns and creating verb forms. Try to save S tiles for high-scoring opportunities.</p>
+            </div>
+        </section>
+
+        <section class="container content-section">
+            <h2>High-Scoring Spanish Words</h2>
+            <div class="high-value-words">
+                <h3>Words with Z (10 points)</h3>
+                <div class="word-list">
+                    <div class="word-item">
+                        <div class="word-text">zorro</div>
+                        <div class="word-meaning">fox</div>
+                    </div>
+                    <div class="word-item">
+                        <div class="word-text">zumo</div>
+                        <div class="word-meaning">juice</div>
+                    </div>
+                    <div class="word-item">
+                        <div class="word-text">zona</div>
+                        <div class="word-meaning">zone</div>
+                    </div>
+                    <div class="word-item">
+                        <div class="word-text">zapato</div>
+                        <div class="word-meaning">shoe</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="high-value-words">
+                <h3>Words with Ñ (8 points)</h3>
+                <div class="word-list">
+                    <div class="word-item">
+                        <div class="word-text">niño</div>
+                        <div class="word-meaning">child</div>
+                    </div>
+                    <div class="word-item">
+                        <div class="word-text">año</div>
+                        <div class="word-meaning">year</div>
+                    </div>
+                    <div class="word-item">
+                        <div class="word-text">caña</div>
+                        <div class="word-meaning">cane, reed</div>
+                    </div>
+                    <div class="word-item">
+                        <div class="word-text">España</div>
+                        <div class="word-meaning">Spain</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="high-value-words">
+                <h3>Words with J (8 points)</h3>
+                <div class="word-list">
+                    <div class="word-item">
+                        <div class="word-text">juego</div>
+                        <div class="word-meaning">game</div>
+                    </div>
+                    <div class="word-item">
+                        <div class="word-text">hijo</div>
+                        <div class="word-meaning">son</div>
+                    </div>
+                    <div class="word-item">
+                        <div class="word-text">jefe</div>
+                        <div class="word-meaning">boss</div>
+                    </div>
+                    <div class="word-item">
+                        <div class="word-text">jardín</div>
+                        <div class="word-meaning">garden</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="high-value-words">
+                <h3>Words with X (8 points)</h3>
+                <div class="word-list">
+                    <div class="word-item">
+                        <div class="word-text">éxito</div>
+                        <div class="word-meaning">success</div>
+                    </div>
+                    <div class="word-item">
+                        <div class="word-text">exacto</div>
+                        <div class="word-meaning">exact</div>
+                    </div>
+                    <div class="word-item">
+                        <div class="word-text">taxi</div>
+                        <div class="word-meaning">taxi</div>
+                    </div>
+                    <div class="word-item">
+                        <div class="word-text">texto</div>
+                        <div class="word-meaning">text</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container content-section">
+            <h2>Spanish Scrabble Rules Overview</h2>
+            
+            <h3>Valid Words</h3>
+            <p>Only words found in an official Spanish dictionary are valid. Proper nouns, abbreviations, and words requiring hyphens or apostrophes are not allowed.</p>
+            
+            <h3>Special Spanish Letters</h3>
+            <p>Spanish Scrabble includes special tiles for CH, LL, RR, and Ñ. These are treated as single letters and occupy one square on the board.</p>
+            
+            <h3>Accents Don't Count</h3>
+            <p>In most Spanish Scrabble rules, accented and non-accented vowels are treated the same. You don't need to indicate accents when playing tiles.</p>
+            
+            <h3>Verb Conjugations Are Valid</h3>
+            <p>All proper conjugations of Spanish verbs are valid plays. This includes subjunctive, conditional, and imperative forms.</p>
+        </section>
+
+        <section class="container content-section">
+            <h2>Two-Letter Spanish Words</h2>
+            <p>Two-letter words are crucial in Spanish Scrabble for tight spaces and parallel plays. Here are all valid two-letter Spanish words:</p>
+            <p><strong>al, de, el, en, es, la, le, lo, me, mi, no, os, se, si, su, te, tu, un, ya, yo</strong></p>
+            <div class="info-box">
+                <strong>Pro Tip:</strong> Memorize these 20 two-letter words. They'll help you score points in difficult situations and create openings for future plays.
+            </div>
+        </section>
+
+        <section class="container content-section">
+            <h2>Common Mistakes to Avoid</h2>
+            <ul>
+                <li><strong>Confusing CH and C+H:</strong> CH is a single tile worth 5 points, not two separate letters</li>
+                <li><strong>Forgetting about verb forms:</strong> Many Spanish verbs have unusual conjugations that are valid words</li>
+                <li><strong>Not using the blank tiles strategically:</strong> Save blanks for high-scoring opportunities or difficult letter combinations</li>
+                <li><strong>Ignoring defense:</strong> Don't create easy opportunities for your opponent to use bonus squares</li>
+                <li><strong>Hoarding high-value letters:</strong> Use them strategically rather than waiting for the "perfect" word</li>
+            </ul>
+        </section>
+
+        <section class="container content-section">
+            <h2>Use Our Spanish Word Unscrambler</h2>
+            <p>Want to find the best words from your Scrabble rack? Use our <a href="/" style="color: var(--primary); text-decoration: underline;">Spanish Word Unscrambler</a> to discover all possible words from your letters. It's perfect for practice and improving your Spanish vocabulary!</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Spanish Word Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Spanish Word Unscrambler</a></li>
+                        <li><a href="/spanish-anagram-solver">Spanish Anagram Solver</a></li>
+                        <li><a href="/spanish-scrabble-helper">Spanish Scrabble Helper</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="/how-to-use">How to Use</a></li>
+                        <li><a href="/spanish-letters-guide">Spanish Letters Guide</a></li>
+                        <li><a href="/word-game-tips">Word Game Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SpanishWordUnscrambler.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
