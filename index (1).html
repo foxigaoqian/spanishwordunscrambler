@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanish Word Unscrambler – Unscramble Spanish Words Instantly</title>
+    <meta name="description" content="Free Spanish word unscrambler tool. Unscramble Spanish letters instantly for Scrabble, word games, or learning. Supports ñ, á, é, í, ó, ú. No login required.">
+    <link rel="canonical" href="https://spanishwordunscrambler.com">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Spanish Word Unscrambler – Free & Instant">
+    <meta property="og:description" content="Unscramble Spanish words instantly. Perfect for Scrabble, word games, and learning Spanish.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spanishwordunscrambler.com">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Spanish Word Unscrambler",
+      "url": "https://spanishwordunscrambler.com",
+      "description": "Free tool to unscramble Spanish words instantly. Supports accented characters and special letters.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": "Instant results, no login required, supports Spanish accents, Scrabble helper"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the Spanish word unscrambler work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simply enter your scrambled Spanish letters into the input field and click 'Unscramble'. The tool instantly searches through a comprehensive Spanish dictionary to find all valid words that can be formed from your letters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this tool support Spanish accents like ñ, á, é?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Our Spanish word unscrambler fully supports all Spanish special characters including ñ and accented vowels (á, é, í, ó, ú). You can type them directly or they'll be recognized from your input."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this for Spanish Scrabble or word games?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! This tool is perfect for Spanish Scrabble, crossword puzzles, and any Spanish word games. It helps you find valid Spanish words from your available letters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the Spanish word unscrambler free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this Spanish word unscrambler is completely free with no registration or login required. Use it as many times as you need."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary: #D84315;
+            --primary-dark: #BF360C;
+            --secondary: #FFA726;
+            --accent: #FFE082;
+            --bg: #FFFBF5;
+            --surface: #FFFFFF;
+            --text: #1A1A1A;
+            --text-muted: #666666;
+            --border: #E0D5C7;
+            --success: #43A047;
+            --shadow: rgba(216, 67, 21, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Decorative background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 167, 38, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(216, 67, 21, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 10px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 40px 0 60px;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--text);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Tool Section */
+        .tool-section {
+            background: var(--surface);
+            border-radius: 24px;
+            padding: 48px;
+            margin-bottom: 80px;
+            box-shadow: 
+                0 4px 24px var(--shadow),
+                0 0 0 1px var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tool-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .input-group {
+            margin-bottom: 24px;
+        }
+        
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 18px 24px;
+            font-size: 1.125rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            background: var(--bg);
+            transition: all 0.3s ease;
+            font-family: inherit;
+            text-transform: lowercase;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(216, 67, 21, 0.1);
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 18px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(216, 67, 21, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(216, 67, 21, 0.4);
+        }
+        
+        .btn-secondary {
+            background: var(--bg);
+            color: var(--text);
+            border: 2px solid var(--border);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--border);
+        }
+        
+        /* Results */
+        .results {
+            min-height: 200px;
+        }
+        
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .results-count {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.125rem;
+        }
+        
+        .filter-group {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        
+        .filter-group label {
+            margin: 0;
+            font-size: 0.875rem;
+        }
+        
+        select {
+            padding: 8px 12px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg);
+            font-family: inherit;
+            cursor: pointer;
+        }
+        
+        .words-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 12px;
+        }
+        
+        .word-card {
+            background: var(--bg);
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+        
+        .word-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        .word-text {
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        
+        .word-length {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+        }
+        
+        .empty-icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+            opacity: 0.3;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 80px;
+        }
+        
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 24px;
+            color: var(--text);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin: 32px 0 16px;
+            color: var(--text);
+        }
+        
+        p {
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        
+        ul, ol {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* Feature Cards */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: var(--surface);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px var(--shadow);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        
+        .feature-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        
+        /* FAQ Section */
+        .faq-item {
+            background: var(--surface);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border);
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        
+        .faq-answer {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--surface);
+            padding: 60px 0 40px;
+            margin-top: 100px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h4 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.125rem;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        
+        .footer-links {
+            list-style: none;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .tool-section {
+                padding: 32px 24px;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .results-header {
+                flex-direction: column;
+                gap: 16px;
+                align-items: flex-start;
+            }
+            
+            .words-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+        }
+        
+        /* Loading animation */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .loading .word-card {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Spanish Word Unscrambler</div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Unscramble Spanish Words Instantly</h1>
+                <p class="hero-subtitle">Free Spanish word unscrambler for Scrabble, word games, and learning. Supports ñ, á, é, í, ó, ú. No login required.</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="tool-section">
+                <div class="input-group">
+                    <label for="letters">Enter scrambled Spanish letters:</label>
+                    <input 
+                        type="text" 
+                        id="letters" 
+                        placeholder="e.g., alapbra, ñosa, español"
+                        autocomplete="off"
+                        spellcheck="false"
+                    >
+                </div>
+                
+                <div class="button-group">
+                    <button class="btn-primary" onclick="unscrambleWords()">Unscramble Words</button>
+                    <button class="btn-secondary" onclick="clearInput()">Clear</button>
+                </div>
+
+                <div class="results" id="results">
+                    <div class="empty-state">
+                        <div class="empty-icon">🔤</div>
+                        <p>Enter scrambled letters above to find Spanish words</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container content-section">
+            <h2>Why Use This Spanish Word Unscrambler</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <div class="feature-title">Instant Results</div>
+                    <div class="feature-text">Get all possible Spanish words immediately. No waiting, no processing delays.</div>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🆓</span>
+                    <div class="feature-title">100% Free</div>
+                    <div class="feature-text">No registration, no login, no credit card. Use it unlimited times for free.</div>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">ñ</span>
+                    <div class="feature-title">Spanish Characters</div>
+                    <div class="feature-text">Full support for ñ and accented vowels (á, é, í, ó, ú).</div>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🎮</span>
+                    <div class="feature-title">Perfect for Games</div>
+                    <div class="feature-text">Ideal for Spanish Scrabble, crosswords, and word games.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container content-section">
+            <h2>How It Works</h2>
+            <p>Using the Spanish word unscrambler is simple and straightforward. Type your scrambled Spanish letters into the input field and click "Unscramble Words". The tool instantly searches through a comprehensive Spanish dictionary to find all valid words.</p>
+            
+            <p>For example, if you enter "alapbra", the unscrambler will find "palabra". If you type "ñosa", it will return "años" and "soña". The tool recognizes all Spanish special characters automatically.</p>
+            
+            <p>You can filter results by word length to find words that fit your specific needs, whether you're solving a crossword puzzle or playing Spanish Scrabble.</p>
+        </section>
+
+        <section class="container content-section">
+            <h2>Use Cases</h2>
+            
+            <h3>For Spanish Language Learners</h3>
+            <p>Students learning Spanish can use this tool to discover new vocabulary and understand letter combinations. It helps reinforce spelling patterns and expands your Spanish word knowledge naturally.</p>
+            
+            <h3>For Scrabble and Word Game Players</h3>
+            <p>Spanish Scrabble players and word game enthusiasts can find valid words from their available tiles. Maximize your score by discovering all possible words from your letters.</p>
+            
+            <h3>For Teachers and Educators</h3>
+            <p>Teachers can create vocabulary exercises, spelling challenges, and word puzzles for students. Generate word lists and test materials quickly and efficiently.</p>
+            
+            <h3>For Crossword Solvers</h3>
+            <p>Stuck on a Spanish crossword? Enter the available letters to find words that fit the puzzle pattern.</p>
+        </section>
+
+        <section class="container content-section">
+            <h2>Advanced Options</h2>
+            <p>Our Spanish word unscrambler includes helpful filtering options to refine your results. Filter words by length to find exactly what you need for your specific use case.</p>
+            
+            <p>The tool processes all standard Spanish letters including special characters that are essential to the language. Whether you're working with common words or more complex vocabulary, the unscrambler handles them all.</p>
+        </section>
+
+        <section class="container content-section">
+            <h2>What Is a Spanish Word Unscrambler</h2>
+            <p>A Spanish word unscrambler is a tool that takes jumbled Spanish letters and finds all valid Spanish words that can be formed from those letters. It works by comparing your input against a comprehensive Spanish dictionary, accounting for all letter combinations and permutations.</p>
+            
+            <p>Unlike English word unscramblers, a Spanish word unscrambler must handle the unique characteristics of the Spanish language, including the letter ñ and accented vowels (á, é, í, ó, ú). These special characters are integral to Spanish spelling and pronunciation.</p>
+            
+            <p>Spanish word unscramblers are valuable tools for language learning, word games, and puzzle solving. They help users discover vocabulary, verify spellings, and explore the Spanish language in an interactive way.</p>
+        </section>
+
+        <section class="container content-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How does the Spanish word unscrambler work?</div>
+                <div class="faq-answer">Simply enter your scrambled Spanish letters into the input field and click "Unscramble". The tool instantly searches through a comprehensive Spanish dictionary to find all valid words that can be formed from your letters.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Does this tool support Spanish accents like ñ, á, é?</div>
+                <div class="faq-answer">Yes! Our Spanish word unscrambler fully supports all Spanish special characters including ñ and accented vowels (á, é, í, ó, ú). You can type them directly or they'll be recognized from your input.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I use this for Spanish Scrabble or word games?</div>
+                <div class="faq-answer">Absolutely! This tool is perfect for Spanish Scrabble, crossword puzzles, and any Spanish word games. It helps you find valid Spanish words from your available letters.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is the Spanish word unscrambler free to use?</div>
+                <div class="faq-answer">Yes, this Spanish word unscrambler is completely free with no registration or login required. Use it as many times as you need.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What's the maximum number of letters I can unscramble?</div>
+                <div class="faq-answer">You can enter any number of letters. The tool will find all valid Spanish words regardless of input length.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I filter results by word length?</div>
+                <div class="faq-answer">Yes! Use the length filter dropdown in the results section to show only words of a specific length. This is especially useful for crossword puzzles and word games with space constraints.</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Spanish Word Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Spanish Word Unscrambler</a></li>
+                        <li><a href="/spanish-anagram-solver">Spanish Anagram Solver</a></li>
+                        <li><a href="/spanish-scrabble-helper">Spanish Scrabble Helper</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="/how-to-use">How to Use</a></li>
+                        <li><a href="/spanish-letters-guide">Spanish Letters Guide</a></li>
+                        <li><a href="/word-game-tips">Word Game Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SpanishWordUnscrambler.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
