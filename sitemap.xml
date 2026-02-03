@@ -30,4 +30,34 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+      <url>
+    <loc>https://spanishwordunscrambler.com/spanish-anagram-solver</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://spanishwordunscrambler.com/spanish-scrabble-helper</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://spanishwordunscrambler.com/how-to-use</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://spanishwordunscrambler.com/spanish-letters-guide</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://spanishwordunscrambler.com/word-game-tips</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
